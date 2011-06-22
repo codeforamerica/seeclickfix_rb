@@ -1,3 +1,4 @@
+require 'seeclickfix/client/comments'
 require 'seeclickfix/client/issues'
 
 module SeeClickFix
@@ -11,6 +12,7 @@ module SeeClickFix
       end
     end
     
+    include SeeClickFix::Client::Comments
     include SeeClickFix::Client::Issues
 
   end
