@@ -1,4 +1,5 @@
 require 'seeclickfix/connection'
+require 'seeclickfix/request'
 
 require 'seeclickfix/client/comments'
 require 'seeclickfix/client/issues'
@@ -17,7 +18,8 @@ module SeeClickFix
       end
     end
     
-    include SeeClickFix::Connection
+    include SeeClickFix::Client::Connection
+    include SeeClickFix::Request
     
     include SeeClickFix::Client::Comments
     include SeeClickFix::Client::Issues
