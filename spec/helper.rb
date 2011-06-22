@@ -7,35 +7,35 @@ require 'rspec'
 require 'webmock/rspec'
 
 def a_delete(path)
-  a_request(:delete, 'http://seeclickfix.com/api/' + path)
+  a_request(:delete, 'http://seeclickfix.com/' + path)
 end
 
 def a_get(path)
-  a_request(:get, 'http://seeclickfix.com/api/' + path)
+  a_request(:get, 'http://seeclickfix.com/' + path)
 end
 
 def a_post(path)
-  a_request(:post, 'http://seeclickfix.com/api/' + path)
+  a_request(:post, 'http://seeclickfix.com/' + path)
 end
 
 def a_put(path)
-  a_request(:put, 'http://seeclickfix.com/api/' + path)
+  a_request(:put, 'http://seeclickfix.com/' + path)
 end
 
 def stub_delete(path)
-  stub_request(:delete, 'http://seeclickfix.com/api/' + path)
+  stub_request(:delete, 'http://seeclickfix.com/' + path)
 end
 
 def stub_get(path)
-  stub_request(:get, 'http://seeclickfix.com/api/' + path)
+  stub_request(:get, 'http://seeclickfix.com/' + path)
 end
 
 def stub_post(path)
-  stub_request(:post, 'http://seeclickfix.com/api/' + path)
+  stub_request(:post, 'http://seeclickfix.com/' + path)
 end
 
 def stub_put(path)
-  stub_request(:put, 'http://seeclickfix.com/api/' + path)
+  stub_request(:put, 'http://seeclickfix.com/' + path)
 end
 
 def fixture_path
