@@ -1,3 +1,5 @@
+require 'seeclickfix/client/issues'
+
 module SeeClickFix
   class Client
     attr_accessor *Configuration::VALID_OPTIONS_KEYS
@@ -8,6 +10,8 @@ module SeeClickFix
         send("#{key}=", options[key])
       end
     end
+    
+    include SeeClickFix::Client::Issues
 
   end
 end
