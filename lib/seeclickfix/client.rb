@@ -1,5 +1,6 @@
 require 'seeclickfix/client/comments'
 require 'seeclickfix/client/issues'
+require 'seeclickfix/client/watch_areas'
 
 module SeeClickFix
   class Client
@@ -14,6 +15,7 @@ module SeeClickFix
     
     include SeeClickFix::Client::Comments
     include SeeClickFix::Client::Issues
+    include SeeClickFix::Client::WatchAreas
 
   end
 end
