@@ -1,5 +1,6 @@
 require 'seeclickfix/client/comments'
 require 'seeclickfix/client/issues'
+require 'seeclickfix/client/service_request_types'
 require 'seeclickfix/client/watch_areas'
 
 module SeeClickFix
@@ -15,6 +16,7 @@ module SeeClickFix
     
     include SeeClickFix::Client::Comments
     include SeeClickFix::Client::Issues
+    include SeeClickFix::Client::ServiceRequestTypes
     include SeeClickFix::Client::WatchAreas
 
   end
