@@ -1,0 +1,3 @@
+module SeeClickFix
+  # Your code goes here...
+end
