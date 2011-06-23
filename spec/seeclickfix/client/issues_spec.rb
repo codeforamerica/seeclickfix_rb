@@ -19,5 +19,19 @@ describe SeeClickFix::Client::Issues do
       test.first.issue_id.should == 108657
     end
   end
+  
+  describe ".issue_details" do
+    before do
+      stub_get("api/issues/1050.json").
+        to_return(:status => 200, :body => fixture("issue_details_1050.json"))
+    end
+
+    it "should return the details for one issue" do
+      test = @client.issue_details("1050")
+      a_get("api/issues/1050.json").should have_been_made
+      test.first.status.should == "Archived"
+      test.first.issue_id.should == 1050
+    end
+  end
 
 end
