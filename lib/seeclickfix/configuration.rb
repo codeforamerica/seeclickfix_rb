@@ -5,6 +5,7 @@ module SeeClickFix
   module Configuration
     VALID_OPTIONS_KEYS = [
       :adapter,
+      :api_key,
       :api_version,
       :login,
       :password,
@@ -14,6 +15,7 @@ module SeeClickFix
       :user_agent].freeze
 
     DEFAULT_ADAPTER     = Faraday.default_adapter
+    DEFAULT_API_KEY     = nil
     DEFAULT_API_VERSION = nil
     DEFAULT_LOGIN       = nil
     DEFAULT_PASSWORD    = nil
@@ -38,6 +40,7 @@ module SeeClickFix
 
     def reset
       self.adapter     = DEFAULT_ADAPTER
+      self.api_key     = DEFAULT_API_KEY
       self.api_version = DEFAULT_API_VERSION
       self.login       = DEFAULT_LOGIN
       self.password    = DEFAULT_PASSWORD
