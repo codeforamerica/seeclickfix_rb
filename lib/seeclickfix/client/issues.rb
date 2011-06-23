@@ -30,12 +30,21 @@ module SeeClickFix
       # @option options DESC [String] Descending.
       # @option options request_tags [String] Limit results to issues with service request tags. Service request tags are automatically added to issues when issues are reported to a specific service request. Multiple request tags can be found using the form "request_type_[request_type_id],request_type_[request_type_id],request_type_[request_type_id]". 
       # @return [Array<Hashie::Mash>] 
+      # @see http://help.seeclickfix.com/kb/api/listing-issues
       # @example
       #   SeeClickFix.list_issues("San Francisco")
       def list_issues(location, options={})
              get("api/issues.json?at=#{location}", options)
       end
       
+      # Use this query to get details on a single issue. There may be more information in this query than the issue listing query.
+      #
+      # @param issue [String] The issue number for the query
+      # @param options [Hash] A customizable set of options.
+      # @return [Array<Hashie::Mash>] 
+      # @see http://help.seeclickfix.com/kb/api/querying-an-issue
+      # @example
+      #   SeeClickFix.issue_details("1050")
       def issue_details(issue, options={})
              get("api/issues/#{issue}.json", options)
       end
