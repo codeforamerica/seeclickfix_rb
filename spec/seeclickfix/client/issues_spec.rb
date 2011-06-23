@@ -14,7 +14,7 @@ describe SeeClickFix::Client::Issues do
     end
 
     it "should return a list of issues" do
-      test = @client.list_issues("San Francisco")
+      test = @client.list_issues(:at => "San Francisco")
       a_get("api/issues.json?at=San+Francisco").should have_been_made
       test.first.issue_id.should == 108657
     end
