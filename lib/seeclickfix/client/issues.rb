@@ -36,6 +36,11 @@ module SeeClickFix
              get("api/issues.json?at=#{location}", options)
       end
       
+      def issue_details(issue, options={})
+             get("api/issues/#{issue}.json", options)
+      end
+      
+      
     end
   end
 end
