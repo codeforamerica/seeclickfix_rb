@@ -6,7 +6,7 @@ module SeeClickFix
       #
       # @param lat [String] Latitude to check for service request types.
       # @param long [String] Longitude to check for service request types.
-      # @option api_key [String] Latitude to check for service request types.
+      # @option api_key [String] API Key
       # @param options [Hash] A customizable set of options.
       # @return [Array<Hashie::Mash>] 
       # @see http://help.seeclickfix.com/kb/api/list-service-request-types
