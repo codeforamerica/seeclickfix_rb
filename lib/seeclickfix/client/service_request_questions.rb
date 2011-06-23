@@ -12,7 +12,7 @@ module SeeClickFix
       # @example
       #   SeeClickFix.service_request_types("1")
       def service_request_type_questions(request_type_id,options={})
-        get("api/request_types/#{request_type}/request_type_questions.json", options)
+        get("api/request_types/#{request_type_id}/request_type_questions.json", options)
       end
     end
   end
