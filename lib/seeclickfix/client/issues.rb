@@ -49,6 +49,12 @@ module SeeClickFix
              get("api/issues/#{issue}.json", options)
       end
       
+      def create_issue(summary, lat, lng, options={})
+        post("api/issues.json?issue[summary]=#{summary}&issue[lat]=#{lat}&issue[lng]=#{lng}")
+        
+      end
+      
+      
       
     end
   end
