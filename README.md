@@ -1,6 +1,6 @@
 SeeClickFix API
 =======
-A Ruby wrapper for the SBA APIs at [http://help.seeclickfix.com/kb/api/api-overview](http://help.seeclickfix.com/kb/api/api-overview)
+A Ruby wrapper for the SeeClickFix APIs at [http://help.seeclickfix.com/kb/api/api-overview](http://help.seeclickfix.com/kb/api/api-overview)
 
 Does your project or organization use this gem?
 ------------------------------------------
