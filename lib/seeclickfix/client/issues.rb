@@ -34,7 +34,7 @@ module SeeClickFix
       # @example
       #   SeeClickFix.list_issues("San Francisco")
       def list_issues(location, options={})
-             get("api/issues.json?at=#{location}", options)
+        get("api/issues.json?at=#{location}", options)
       end
       
       # Use this query to get details on a single issue. There may be more information in this query than the issue listing query.
@@ -46,9 +46,34 @@ module SeeClickFix
       # @example
       #   SeeClickFix.issue_details("1050")
       def issue_details(issue, options={})
-             get("api/issues/#{issue}.json", options)
+        get("api/issues/#{issue}.json", options)
       end
       
+      # Use this query to get details on a single issue. There may be more information in this query than the issue listing query.
+      #
+      # @param summary [String] Summary of the problem
+      # @param lat [String] Latitude of the issue.
+      # @param lng [String] Longitude of the issue.
+      # @param api_key [String] Api key
+      # @param options [Hash] A customizable set of options.
+      # @option options issue[description] [String] Longer text describing the problem.
+      # @option options issue[address] [String] Text representation of the location of the issue.
+      # @option options issue[reporter_email] [String] Email of the person reporting the issue.
+      # @option options issue[reporter_display] [String] Text display of the person reporting the issue.
+      # @option options issue[issue_image_attributes][uploaded_data] [String] Attach an image to the issue. Form data must be sent as "multipart/form-data".
+      # @option options issue[request_type_id] [String] If submitting to a service request, specify the service request ID here. By adding this attribute, additional validations are required, including: 1. Making sure the service request can be within the given boundaries. 2. Making sure all of the required additional questions are completed.
+      # For each service request question provide the following parameters.
+      # @option options issue[request_type_answers_attributes][][request_type_question_primary_key] [String] Primary key of the service request question.
+      # @option options issue[request_type_answers_attributes][][answer] [String] Answer to the service request question.
+      # @return [Array<Hashie::Mash>] 
+      # @see http://help.seeclickfix.com/kb/api/creating-an-issue
+      # @example
+      #   SeeClickFix.issue_details("1050")
+      #
+      # @return [Array<Hashie::Mash>] 
+      # @see http://help.seeclickfix.com/kb/api/querying-an-issue
+      # @example
+      #   SeeClickFix.create_details("foo","41.3103725899427", "-72.9241595114853") http://seeclickfix.com/api/issues.xml
       def create_issue(summary, lat, lng, options={})
         post("api/issues.json?issue[summary]=#{summary}&issue[lat]=#{lat}&issue[lng]=#{lng}")
         
