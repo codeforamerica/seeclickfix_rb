@@ -4,11 +4,11 @@ require File.expand_path('../lib/seeclickfix/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name        = 'seeflickfix'
   gem.version     = SeeClickFix::VERSION
-  gem.author      = "Code for America"
-  gem.email       = 'info@codeforamerica.org'
-  gem.homepage    = ''
-  gem.summary     = %q{TODO: Write a gem summary}
-  gem.description = %q{TODO: Write a gem description}
+  gem.author      = "Ryan Resella"
+  gem.email       = 'ryan@codeforamerica.org'
+  gem.homepage    = 'https://github.com/codeforamerica/seeclickfix_rb'
+  gem.summary     = gem.description
+  gem.description = %q{A Ruby wrapper for the SeeClickFix API}
 
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -22,7 +22,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'simplecov', '~> 0.4'
   gem.add_development_dependency 'webmock', '~> 1.6'
   gem.add_development_dependency 'yard', '~> 0.7'
-  
   gem.add_runtime_dependency 'addressable', '~> 2.2.6'
   gem.add_runtime_dependency 'faraday', '~> 0.6.0'
   gem.add_runtime_dependency 'faraday_middleware', '~> 0.6.0'

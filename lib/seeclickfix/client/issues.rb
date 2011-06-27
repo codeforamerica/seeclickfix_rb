@@ -76,7 +76,6 @@ module SeeClickFix
       #   SeeClickFix.create_details("foo","41.3103725899427", "-72.9241595114853") http://seeclickfix.com/api/issues.xml
       def create_issue(summary, lat, lng, options={})
         post("api/issues.json?issue[summary]=#{summary}&issue[lat]=#{lat}&issue[lng]=#{lng}")
-        
       end
       
       
