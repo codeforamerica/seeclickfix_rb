@@ -14,6 +14,10 @@ module SeeClickFix
         get("api/issues/#{issue}/comments.json", options)
       end
       
+      def create_comment(issue_id, comment, comment_email, options={})
+        post("api/issues/#{issue_id}/comments.json?comment[comment]=#{comment}&comment[email]=#{comment_email}", options)
+      end
+      
     end
   end
 end
