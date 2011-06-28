@@ -6,36 +6,36 @@ require 'seeclickfix'
 require 'rspec'
 require 'webmock/rspec'
 
-def a_delete(path)
-  a_request(:delete, 'http://seeclickfix.com/' + path)
+def a_delete(url)
+  a_request(:delete, seeclickfix_url(url))
 end
 
-def a_get(path)
-  a_request(:get, 'http://seeclickfix.com/' + path)
+def a_get(url)
+  a_request(:get, seeclickfix_url(url))
 end
 
-def a_post(path)
-  a_request(:post, 'http://seeclickfix.com/' + path)
+def a_post(url)
+  a_request(:post, seeclickfix_url(url))
 end
 
-def a_put(path)
-  a_request(:put, 'http://seeclickfix.com/' + path)
+def a_put(url)
+  a_request(:put, seeclickfix_url(url))
 end
 
-def stub_delete(path)
-  stub_request(:delete, 'http://seeclickfix.com/' + path)
+def stub_delete(url)
+  stub_request(:delete, seeclickfix_url(url))
 end
 
-def stub_get(path)
-  stub_request(:get, 'http://seeclickfix.com/' + path)
+def stub_get(url)
+  stub_request(:get, seeclickfix_url(url))
 end
 
-def stub_post(path)
-  stub_request(:post, 'http://seeclickfix.com/' + path)
+def stub_post(url)
+  stub_request(:post, seeclickfix_url(url))
 end
 
-def stub_put(path)
-  stub_request(:put, 'http://seeclickfix.com/' + path)
+def stub_put(url)
+  stub_request(:put, seeclickfix_url(url))
 end
 
 def fixture_path
@@ -44,4 +44,12 @@ end
 
 def fixture(file)
   File.new(fixture_path + '/' + file)
+end
+
+def seeclickfix_url(url)
+  if url =~ /^https/
+    url
+  else
+    "http://seeclickfix.com/#{url}"
+  end
 end
