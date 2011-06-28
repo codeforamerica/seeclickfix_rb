@@ -47,9 +47,5 @@ def fixture(file)
 end
 
 def seeclickfix_url(url)
-  if url =~ /^https/
-    url
-  else
-    "http://seeclickfix.com/#{url}"
-  end
+  "https://seeclickfix.com/#{url}"
 end
