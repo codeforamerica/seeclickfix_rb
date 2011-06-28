@@ -10,7 +10,7 @@ module SeeClickFix
         
         options = {
              :ssl => { :verify => false },
-             :url => 'http://seeclickfix.com/',
+             :url => 'https://seeclickfix.com/',
            }
             Faraday.new(options) do |connection|
               connection.use Faraday::Request::UrlEncoded
