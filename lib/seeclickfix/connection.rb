@@ -5,9 +5,14 @@ module SeeClickFix
     # @private
     module Connection
       private
-
+            
       def connection
-            Faraday.new(:url => 'http://seeclickfix.com/') do |connection|
+        
+        options = {
+             :ssl => { :verify => false },
+             :url => 'http://seeclickfix.com/',
+           }
+            Faraday.new(options) do |connection|
               connection.use Faraday::Request::UrlEncoded
               connection.use Faraday::Response::RaiseError
               connection.use Faraday::Response::Mashify
