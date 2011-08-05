@@ -16,17 +16,17 @@ Documentation
 
 Continuous Integration
 ----------------------
-[![Build Status](http://travis-ci.org/codeforamerica/seeclickfix_rb.png)](http://travis-ci.org/codeforamerica/seeclickfix_rb)
+[![Build Status](https://travis-ci.org/codeforamerica/seeclickfix_rb.png)](http://travis-ci.org/codeforamerica/seeclickfix_rb)
 
 Usage Examples
 --------------
     require 'seeclickfix'
-	
+
 	@client = SeeClickFix::Client::New
 	a = @client.list_issues("San Francisco")
 	a.first.issue_id # => 108657
-	
-    
+
+
 Contributing
 ------------
 In the spirit of [free software](http://www.fsf.org/licensing/essays/free-sw.html), **everyone** is encouraged to help improve this project.
