@@ -16,7 +16,7 @@ Documentation
 
 Continuous Integration
 ----------------------
-[![Build Status](https://travis-ci.org/codeforamerica/seeclickfix_rb.png)](http://travis-ci.org/codeforamerica/seeclickfix_rb)
+[![Build Status](https://secure.travis-ci.org/codeforamerica/seeclickfix_rb.png)](http://travis-ci.org/codeforamerica/seeclickfix_rb)
 
 Usage Examples
 --------------
