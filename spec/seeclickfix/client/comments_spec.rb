@@ -20,7 +20,7 @@ describe SeeClickFix::Client::Comments do
       test.first.issue_id.should == 14074
     end
   end
-  
+
   describe ".create_comment" do
     before do
       stub_post("api/issues/7000/comments.json?comment[comment]=hello&comment[email]=joe@myemail.com").
@@ -34,5 +34,5 @@ describe SeeClickFix::Client::Comments do
       test.first.id.should == 41623
     end
   end
-  
+
 end

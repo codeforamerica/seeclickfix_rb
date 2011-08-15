@@ -19,7 +19,7 @@ describe SeeClickFix::Client::Issues do
       test.first.issue_id.should == 108657
     end
   end
-  
+
   describe ".issue_details" do
     before do
       stub_get("api/issues/1050.json").
@@ -33,7 +33,7 @@ describe SeeClickFix::Client::Issues do
       test.first.issue_id.should == 1050
     end
   end
-  
+
   describe ".create_issue" do
     before do
       stub_post("api/issues.json?issue[lat]=41.3103725899427&issue[lng]=-72.9241595114853&issue[summary]=foo").
@@ -46,6 +46,5 @@ describe SeeClickFix::Client::Issues do
       test.first.status.should == "Open"
     end
   end
-  
 
 end

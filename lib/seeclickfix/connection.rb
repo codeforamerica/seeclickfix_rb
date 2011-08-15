@@ -5,9 +5,8 @@ module SeeClickFix
     # @private
     module Connection
       private
-            
+
       def connection
-        
         options = {
              :ssl => { :verify => false },
              :url => 'https://seeclickfix.com/',

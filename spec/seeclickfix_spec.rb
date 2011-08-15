@@ -12,5 +12,4 @@ describe SeeClickFix do
       SeeClickFix.client.should be_a SeeClickFix::Client
     end
   end
-  
 end

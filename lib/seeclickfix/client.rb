@@ -17,10 +17,10 @@ module SeeClickFix
         send("#{key}=", options[key])
       end
     end
-    
+
     include SeeClickFix::Client::Connection
     include SeeClickFix::Request
-    
+
     include SeeClickFix::Client::Comments
     include SeeClickFix::Client::Issues
     include SeeClickFix::Client::ServiceRequestQuestions

@@ -10,7 +10,7 @@ describe SeeClickFix::Client::ServiceRequestTypes do
   describe "service_request_types" do
     before do
       stub_get("api/request_types/at.json?lat=32.1610815588945&lng=-110.87677001953125").
-        to_return(:status => 200, :body => fixture("request_types.json"))  
+        to_return(:status => 200, :body => fixture("request_types.json"))
     end
 
     it "should return all comments for the given issue" do

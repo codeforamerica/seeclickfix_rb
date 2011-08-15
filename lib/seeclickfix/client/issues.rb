@@ -1,7 +1,7 @@
 module SeeClickFix
   class Client
     module Issues
-      
+
       # Returns a list of issues for the location Data is returned in chunks of num_results. You can increment the page parameter to get the next group of results. If page exceeds the total number of pages the result will be an empty array
       #
       # @param location [String] Geocodable street address. e.g. zipcode, city, state or 123 state st. new haven, ct.
@@ -28,27 +28,27 @@ module SeeClickFix
       # @option options Issues.hot [String]  Issue Hotness
       # @option options direction [String] Sort direction. Possible values include: ASC - Ascending
       # @option options DESC [String] Descending.
-      # @option options request_tags [String] Limit results to issues with service request tags. Service request tags are automatically added to issues when issues are reported to a specific service request. Multiple request tags can be found using the form "request_type_[request_type_id],request_type_[request_type_id],request_type_[request_type_id]". 
-      # @return [Array<Hashie::Mash>] 
+      # @option options request_tags [String] Limit results to issues with service request tags. Service request tags are automatically added to issues when issues are reported to a specific service request. Multiple request tags can be found using the form "request_type_[request_type_id],request_type_[request_type_id],request_type_[request_type_id]".
+      # @return [Array<Hashie::Mash>]
       # @see http://help.seeclickfix.com/kb/api/listing-issues
       # @example
       #   SeeClickFix.list_issues("San Francisco")
       def list_issues(location, options={})
         get("api/issues.json?at=#{location}", options)
       end
-      
+
       # Use this query to get details on a single issue. There may be more information in this query than the issue listing query.
       #
       # @param issue [String] The issue number for the query
       # @param options [Hash] A customizable set of options.
-      # @return [Array<Hashie::Mash>] 
+      # @return [Array<Hashie::Mash>]
       # @see http://help.seeclickfix.com/kb/api/querying-an-issue
       # @example
       #   SeeClickFix.issue_details("1050")
       def issue_details(issue, options={})
         get("api/issues/#{issue}.json", options)
       end
-      
+
       # Use this query to get details on a single issue. There may be more information in this query than the issue listing query.
       #
       # @param summary [String] Summary of the problem
@@ -65,21 +65,19 @@ module SeeClickFix
       # For each service request question provide the following parameters.
       # @option options issue[request_type_answers_attributes][][request_type_question_primary_key] [String] Primary key of the service request question.
       # @option options issue[request_type_answers_attributes][][answer] [String] Answer to the service request question.
-      # @return [Array<Hashie::Mash>] 
+      # @return [Array<Hashie::Mash>]
       # @see http://help.seeclickfix.com/kb/api/creating-an-issue
       # @example
       #   SeeClickFix.issue_details("1050")
       #
-      # @return [Array<Hashie::Mash>] 
+      # @return [Array<Hashie::Mash>]
       # @see http://help.seeclickfix.com/kb/api/querying-an-issue
       # @example
       #   SeeClickFix.create_details("foo","41.3103725899427", "-72.9241595114853") http://seeclickfix.com/api/issues.xml
       def create_issue(summary, lat, lng, options={})
         post("api/issues.json?issue[summary]=#{summary}&issue[lat]=#{lat}&issue[lng]=#{lng}")
       end
-      
-      
-      
+
     end
   end
 end
