@@ -2,7 +2,7 @@
 require File.expand_path('../lib/seeclickfix/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name        = 'seeflickfix'
+  gem.name        = 'seeclickfix'
   gem.version     = SeeClickFix::VERSION
   gem.author      = "Ryan Resella"
   gem.email       = 'ryan@codeforamerica.org'
