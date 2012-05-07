@@ -22,10 +22,9 @@ Usage Examples
 --------------
     require 'seeclickfix'
 
-	@client = SeeClickFix::Client::New
-	a = @client.list_issues("San Francisco")
-	a.first.issue_id # => 108657
-
+    @client = SeeClickFix::Client::New
+    a = @client.list_issues("San Francisco")
+    a.first.issue_id # => 108657
 
 Contributing
 ------------
