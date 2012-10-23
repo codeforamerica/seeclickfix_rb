@@ -36,13 +36,29 @@ describe SeeClickFix::Client::Issues do
 
   describe ".create_issue" do
     before do
-      stub_post("api/issues.json?issue[lat]=41.3103725899427&issue[lng]=-72.9241595114853&issue[summary]=foo").
+      stub_post("api/issues.json").
+        with(:body => {
+               'issue' => {
+                 'lat'=>'41.3103725899427',
+                 'lng'=>'-72.9241595114853',
+                 'summary'=>'foo',
+                 'description'=>'bar'
+               }
+             }).
         to_return(:status => 200, :body => fixture("create_issue.json"))
     end
 
     it "should create an issue" do
-      test = @client.create_issue("foo", "41.3103725899427", "-72.9241595114853")
-      a_post("api/issues.json?issue[lat]=41.3103725899427&issue[lng]=-72.9241595114853&issue[summary]=foo").should have_been_made
+      test = @client.create_issue("foo", "41.3103725899427", "-72.9241595114853", 'issue[description]' => 'bar')
+      a_post("api/issues.json").
+        with(:body => {
+               'issue' => {
+                 'lat'=>'41.3103725899427',
+                 'lng'=>'-72.9241595114853',
+                 'summary'=>'foo',
+                 'description'=>'bar'
+               }
+             }).should have_been_made
       test.first.status.should == "Open"
     end
   end
