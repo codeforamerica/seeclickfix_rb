@@ -14,7 +14,7 @@ Add it to the [apps](http://github.com/codeforamerica/seeclickfix_rb/wiki/apps) 
 ## Usage Examples
     require 'seeclickfix'
 
-    @client = SeeClickFix::Client::New
+    @client = SeeClickFix::Client.new
     a = @client.list_issues("San Francisco")
     a.first.issue_id # => 108657
 
