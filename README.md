@@ -73,6 +73,6 @@ Ideally, a bug report should include a pull request with failing specs.
 ## Copyright
 Copyright (c) 2010 Code for America. See [LICENSE][] for details.
 
-[license]: https://github.com/cfalabs/seeclickfix_rb/blob/master/LICENSE.md
+[license]: https://github.com/codeforamerica/seeclickfix_rb/blob/master/LICENSE.md
 
 [![Code for America Tracker](http://stats.codeforamerica.org/codeforamerica/seeclickfix_rb.png)](http://stats.codeforamerica.org/projects/seeclickfix_rb)
